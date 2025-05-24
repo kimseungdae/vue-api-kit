@@ -1,7 +1,11 @@
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import { apiMap } from '../definitions/apiMap'
 import { generateMarkdownDoc } from './utils/generateMarkdownDoc'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 /**
  * API 문서 헤더 템플릿
@@ -17,7 +21,7 @@ const HEADER = `# API 문서
 /**
  * API 문서를 생성하는 함수
  */
-function buildDocs() {
+async function buildDocs() {
   try {
     // 모든 API 스펙을 문서화
     const docs = Object.entries(apiMap)
@@ -47,7 +51,8 @@ function buildDocs() {
   }
 }
 
-// 스크립트가 직접 실행된 경우에만 문서 생성 실행
-if (require.main === module) {
-  buildDocs()
-} 
+// 문서 생성 실행
+buildDocs().catch(error => {
+  console.error('❌ 예기치 않은 오류 발생:', error)
+  process.exit(1) 
+}) 

@@ -11,7 +11,7 @@ const userSchema = z.object({
 })
 
 // API 맵 정의
-export const apiMap = {
+export const apiMap: Record<string, ApiSpec<any, any>> = {
   // 사용자 목록 조회
   getUsers: {
     method: 'GET',
@@ -78,4 +78,4 @@ export const apiMap = {
       success: z.boolean()
     })
   }
-} as const 
+} 
