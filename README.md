@@ -4,8 +4,8 @@
   <img src="https://github.com/kimseungdae/vue-api-kit/blob/main/logo.png?raw=true" alt="logo" width="300">
 </p>
 
-## 🎯 Vue 기반 프로젝트를 위한 확장 가능하고 안전한 API 호출 프레임워크입니다.<br>
-## 📦 스키마 기반 명세 → 자동 호출, 검증, 상태관리, 캐시, mock, 문서화까지 올인원으로 지원합니다!
+### 🎯 Vue 기반 프로젝트를 위한 확장 가능하고 안전한 API 호출 프레임워크입니다.<br>
+### 📦 스키마 기반 명세 → 자동 호출, 검증, 상태관리, 캐시, mock, 문서화까지 올인원으로 지원합니다!
 
 <p align="center">
   <img src="https://img.shields.io/badge/vue-3.0.0-brightgreen.svg" alt="vue">
