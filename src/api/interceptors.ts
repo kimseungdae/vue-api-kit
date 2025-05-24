@@ -24,14 +24,15 @@ export const setupResponseInterceptor = (client: AxiosInstance) => {
       console.error('🔥 API Error:', {
         statusCode: error.response?.status,
         message: error.message,
-        details: error.response?.data?.message || ''
+        details: error.response?.data?.message || '',
+        data: error.response?.data || {} as Record<string, unknown>
       })
 
       throw new ApiError(
         'API 호출 중 예상치 못한 오류가 발생했습니다.',
         error.response?.status || 500,
-        error.response?.data?.message
+        error.response?.data?.message || '알 수 없는 오류가 발생했습니다.'
       )
     }
   )
-} 
+}

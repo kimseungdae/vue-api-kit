@@ -1,3 +1,5 @@
+import { MissingPathParamError } from '../errors'
+
 /**
  * URL 경로의 파라미터를 실제 값으로 치환
  * @example
@@ -65,7 +67,7 @@ export function separateParams(path: string, params: Record<string, any>) {
   // 필수 경로 파라미터 검증
   for (const name of pathParamNames) {
     if (!(name in pathParams)) {
-      throw new Error(`Missing required path parameter: ${name}`)
+      throw new MissingPathParamError(name)
     }
   }
 

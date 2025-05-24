@@ -184,4 +184,8 @@ generateDocs(apiMap) // → api.md 생성
 
 ## 📝 라이선스
 
-MIT License © 2024 [vue-api-kit](https://github.com/yourusername/vue-api-kit)
+## 😎 제작자
+Seungdae.kim 
+kocacolla@gmail.com
+
+MIT License © 2025 [vue-api-kit](https://github.com/yourusername/vue-api-kit)

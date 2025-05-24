@@ -6,6 +6,10 @@ import { initMockWorker } from './mocks/browser'
 const app = createApp(App)
 
 // MSW 초기화
-initMockWorker().catch(console.error)
+if (process.env.NODE_ENV === 'development' || process.env.VITE_ENABLE_MSW === 'true') {
+  initMockWorker().catch(error => {
+    console.error('[MSW] 초기화 실패:', error)
+  })
+}
 
 app.mount('#app') 

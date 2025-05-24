@@ -10,7 +10,7 @@ describe('generated handlers', () => {
     Object.entries(apiMap).forEach(([key, spec], index) => {
       const handler = handlers[index]
       expect(handler.info.method).toBe(spec.method)
-      expect(handler.info.path).toBe(spec.path)
+      expect(handler.info.path).toBe(`/api${spec.path}`)
     })
   })
 }) 

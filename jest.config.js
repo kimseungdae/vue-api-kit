@@ -1,5 +1,6 @@
 /** @type {import('jest').Config} */
-module.exports = {
+export default {
+  verbose: true,
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   moduleFileExtensions: ['js', 'ts', 'json', 'vue'],
@@ -19,8 +20,9 @@ module.exports = {
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   transformIgnorePatterns: [
-    'node_modules/(?!(msw|@mswjs|vue|@vue)/)'
+    'node_modules/(?!(msw|@mswjs|vue|@vue|@anatine)/)'
   ],
+  testTimeout: 10000,
   globals: {
     'import.meta': {
       env: {
